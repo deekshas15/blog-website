@@ -1,0 +1,15 @@
+<%- include("partials/header") -%>
+
+<h1>Home</h1>
+<p><%=contentHome%></p>
+<% contentPost.forEach(function (post){ %>
+<h1><%= post.title %></h1>
+<%if(post.content.length>100){%>
+<%var truncBody=post.content.substring(0,100)+" ...";%>
+<p><%= truncBody %><a href="posts/<%=post.title %>">Read More</a></p>
+
+<%}else{%>
+  <p><%= post.content %></p>
+<%}%>
+
+<%})%>
